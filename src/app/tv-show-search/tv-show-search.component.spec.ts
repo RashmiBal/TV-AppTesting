@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TvShowSearchComponent } from './tv-show-search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('TvShowSearchComponent', () => {
   let component: TvShowSearchComponent;
@@ -8,6 +9,7 @@ describe('TvShowSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports : [FormsModule, ReactiveFormsModule ],
       declarations: [ TvShowSearchComponent ]
     })
     .compileComponents();
