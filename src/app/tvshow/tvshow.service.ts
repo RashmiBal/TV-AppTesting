@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from './../../../src/environments/environment'
 import { IFavoriteShow } from '../ifavorite-show';
 import {map} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 interface ITvShowSearchData{
   shows: Array<Show>;
@@ -27,11 +28,15 @@ export interface Show {
     }
 }
  
+export interface Itvshowservice {
+  //getTVShowsearchlist(userSearchText: string | number)
+  getTVShowsearchlist(userSearchText: string | number) : Observable<IFavoriteShow[]>
+}
   
 @Injectable({
   providedIn: 'root'
 })
-export class TvshowService {
+export class TvshowService implements Itvshowservice{
 
   constructor(private httpClient:HttpClient) { }
 
@@ -99,4 +104,5 @@ export class TvshowService {
 //       image: data[0].show.image.medium
 //     }
 // }
+
 }

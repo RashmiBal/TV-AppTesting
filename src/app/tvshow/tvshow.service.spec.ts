@@ -1,14 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { TvshowService } from './tvshow.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TvshowService', () => {
-  beforeEach(() => TestBed.configureTestingModule({imports: [
-    HttpClientModule],}));
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule],
+    providers: [TvshowService]
+  }));
 
-  it('should be created', () => {
-    const service: TvshowService = TestBed.get(TvshowService);
-    expect(service).toBeTruthy();
-  });
+  it('should be created', inject([TvshowService], (service: TvshowService) => {
+    expect(service).toBeTruthy()
+  }));
+  
 });

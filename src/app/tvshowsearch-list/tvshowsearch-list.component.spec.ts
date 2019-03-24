@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TvshowsearchListComponent } from './tvshowsearch-list.component';
+import { TvshowService } from '../tvshow/tvshow.service';
+import { TvshowServiceFake } from '../tvshow/tvshow.service.fake';
 
 describe('TvshowsearchListComponent', () => {
   let component: TvshowsearchListComponent;
@@ -8,7 +10,8 @@ describe('TvshowsearchListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TvshowsearchListComponent ]
+      declarations: [ TvshowsearchListComponent ],
+      providers:[{provide: TvshowService, useClass: TvshowServiceFake}],
     })
     .compileComponents();
   }));
