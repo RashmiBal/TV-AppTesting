@@ -10,7 +10,7 @@ import { TvshowService } from './tvshow/tvshow.service';
 export class AppComponent {
   title = 'TVshow';
 
-  currentShow: IFavoriteShow | undefined;
+  // currentShow: IFavoriteShow | undefined; // *IMP* Single data code kept for reference
   showsArray:Array<IFavoriteShow>;
 
   constructor(private tvshowService:TvshowService) {
@@ -22,7 +22,7 @@ export class AppComponent {
 
     const userInput = searchValue.split(',').map(s => s.trim());
     this.tvshowService.getTVShowsearchlist(userInput[0])
-    //.subscribe(data => this.currentShow = data);
+    // .subscribe(data => this.currentShow = data); // *IMP* Single data code kept for reference
     .subscribe(data => this.showsArray = data);
   }
 }

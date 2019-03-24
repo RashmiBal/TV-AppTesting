@@ -5,7 +5,7 @@
 </div>
 </nav>
 
-<app-tvshowsearch-list *ngIf="currentShow" [current]="currentShow"></app-tvshowsearch-list>
+<!-- <app-tvshowsearch-list *ngIf="currentShow" [current]="currentShow"></app-tvshowsearch-list> *IMP* SINGLE data-->
 
 
 <app-tvshowsearch-list *ngFor="let currentShow of showsArray" [current]="currentShow"></app-tvshowsearch-list>

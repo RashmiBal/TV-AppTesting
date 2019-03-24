@@ -29,7 +29,7 @@ export interface Show {
 }
  
 export interface Itvshowservice {
-  //getTVShowsearchlist(userSearchText: string | number)
+  // getTVShowsearchlist(userSearchText: string | number) // *IMP* SINGLE Data code for reference
   getTVShowsearchlist(userSearchText: string | number) : Observable<IFavoriteShow[]>
 }
   
@@ -45,7 +45,7 @@ export class TvshowService implements Itvshowservice{
     let retreivedObservable  = this.httpClient.get<ITvShowSearchData>
     (`${environment.baseUrl}api.tvmaze.com/search/shows?q=${userSearchText}&appId=${environment.appId}`);
 
-    // return retreivedObservable.pipe(map(x => this.transformToIFavoriteShow(x))) // SINGLE result saved for reference
+    // return retreivedObservable.pipe(map(x => this.transformToIFavoriteShow(x))) // *IMP* SINGLE result saved for reference
    return retreivedObservable.pipe(map(x => this.transformToIFavoriteShowsArray(x))) 
 
     /* ORIGINAL working as reference
@@ -86,7 +86,7 @@ export class TvshowService implements Itvshowservice{
     return toRet;
 }
 
-// SINGLE result saved for reference
+// *IMP* SINGLE result saved for reference
 // private transformToIFavoriteShow(data: ITvShowSearchData): IFavoriteShow{
 
 //     if (data[0] == undefined) return null;
