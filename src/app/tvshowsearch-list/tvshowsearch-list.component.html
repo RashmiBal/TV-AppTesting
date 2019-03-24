@@ -1,0 +1,24 @@
+<div class="container bg-info">
+  <div class="card card-body list-unstyled">
+    <h3><a [href]='current?.url'>{{current?.name}}</a></h3> 
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="img-fluid img-thumbnail" [src]='current?.image' alt='movie-picture'>
+      </div>
+      <div class="col-sm-8">
+        <ul class="list-group mb-2"> 
+            <li class="list-group-item"><span class="text-info">Runtime: </span> {{current?.runtime}} minutes </li>
+            <li class="list-group-item"><span class="text-info">Time:</span> {{current?.schedule}} </li>
+            <li class="list-group-item"><span class="text-info">Day:</span> {{current?.days}} </li>
+            <li class="list-group-item"><span class="text-info">Language: </span> {{current?.language}}</li>
+            <li class="list-group-item"><span class="text-info">Genres: </span>{{current?.genres}}</li>
+            <li class="list-group-item"><span class="text-info">Site: </span><a [href]='current?.officialSite' target="_blank">{{current?.officialSite}}</a></li> 
+            <li class="list-group-item"><span class="text-info">Description: </span><div [innerHTML]="current?.summary"></div> </li>
+            
+          </ul>
+      </div>
+    </div>   
+  </div>
+</div>
+
+
