@@ -24,4 +24,21 @@ describe('TvShowSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title in a button tag', () => {
+    const fixture = TestBed.createComponent(TvShowSearchComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const nodeAttributes = compiled.querySelector('button').attributes as NamedNodeMap;
+    expect(nodeAttributes.getNamedItem('title').value).toEqual('Search TV show');
+  });
+
+  it('should render placeholder in a input tag', () => {
+    const fixture = TestBed.createComponent(TvShowSearchComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const nodeAttributes = compiled.querySelector('input').attributes as NamedNodeMap;
+    expect(nodeAttributes.getNamedItem('placeholder').value).toEqual('Search');
+  });
+
 });
