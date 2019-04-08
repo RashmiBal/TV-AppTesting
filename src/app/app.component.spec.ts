@@ -30,6 +30,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('TVshow');
   });
 
+  // Remove this test as we do not have h1 tag, kept here for reference
   // it('should render title in a h1 tag', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   fixture.detectChanges();
